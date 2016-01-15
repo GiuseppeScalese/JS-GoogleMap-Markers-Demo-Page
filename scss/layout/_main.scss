@@ -1,0 +1,91 @@
+#main{
+	margin: 0 auto; 
+	width: 65%;
+	padding: 30px 0;
+
+	.form{
+		&__textarea{
+			overflow: auto;
+			font-size: 14px;
+		}
+
+		&__button{
+			@extend .btn;	
+		}
+
+		&__label{
+			font-size: 18px;
+		} 
+	}
+
+	.validation-message{
+		padding-bottom: 20px;
+		font-size: 15px;
+
+		.error-message{
+			color:$error-message-color;
+		}
+	}
+
+	.counter-summary{
+		padding: 30px 0;
+
+		span{
+			padding: 5px 0;
+			font-size: 14px;
+			display: block;
+		}
+	}
+
+	.table-box{
+		display: none;
+		margin-top:40px;
+		background-color: $secondary-color;
+		color: $primary-color; 
+		@extend %clearfix;
+
+		&__content{
+			display: inline-block;
+			vertical-align: top;
+
+			thead{
+				tr{
+					font-size: 16px;
+					font-weight: bold;
+					text-align: left;
+
+					th{
+						text-transform: uppercase;
+						padding: 10px 20px 5px 0px;
+					}
+				}
+			}
+
+			tr{
+				td{
+					padding: 8px 20px 8px 0px;
+					color: $primary-color;
+					text-align: left;
+			    }
+			}
+		}
+	}
+}
+
+@include deskop_tablets{
+
+	#main{
+		width: 80%;
+
+	}
+}
+
+@include phone{
+
+	#main{
+		width: 90%;
+	}
+}
+
+
+

@@ -1,0 +1,72 @@
+//Link hover transition mixin
+@mixin hover-transition($color, $transition_speed){	
+  -webkit-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -moz-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -o-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -ms-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  transition: color $transition_speed ease, text-decoration $transition_speed ease ;
+}
+
+
+//buttons style and buttons states mixins
+@mixin btn-theme($btn-color){
+   border-color: darken($btn-color, 20%);
+   background-color: $btn-color;
+
+   &:hover {
+      background-color: darken($btn-color, 6%);
+      box-shadow: 0 .125em $off-wht, inset 0 .063em  $off-wht, inset 0 -0.188em lighten($btn-color, 2%);
+   }
+   &:active {
+     box-shadow: 0 .063em $off-wht, inset 0 0 1.094em darken($btn-color, 40%), inset 0 .063em darken($btn-color, 20%),inset 0 -0.188em darken($btn-color, 20%); 
+  }
+}
+
+
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;                                                                                                                 
+  border-radius: $radius;
+}
+
+@mixin trans($val...){
+  -webkit-transition: $val;
+  -moz-transition: $val; 
+  -o-transition: $val; 
+  transition: $val; 
+}
+
+
+//media queries mixins
+@mixin phone{
+	@media screen and (max-width: #{$mobile-width-min}) {
+		@content; 
+	}
+}
+
+@mixin deskop_tablets{
+	@media screen and (min-width: #{$mobile-width-min}) and (max-width: #{$mobile-width-max}) {
+  		@content; 
+	}	
+}
+
+
+//clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//Fallback when pixel isn't supported IE8 and below
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+

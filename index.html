@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paragraph Tab List App</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+<!-- Internet Explorer 8 or older versions doesn't support CSS3 media queries. I enable it by importing css3-mediaqueries.js Javascript file. -->
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->  
+
+<!-- importing custom css -->
+<link rel="stylesheet" href="./css/main.css"/>
+
+</head> 
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <h1 class="main-heading">Paragraph parser</h1>
+    </header>
+
+    <div id="main">
+      <div class="validation-message"></div>
+      
+      <form class="form" action="" method="post">
+        <label class="form__label" for="textarea-content">Insert the paragraph to be parsed:</label>
+        <textarea autocomplete="off" class="form__textarea" id="textarea-content" name="textarea-content" placeholder="Please enter a paragraph..."></textarea>
+        <input type="button" class="form__button btn--blue btn--medium" value="Submit">
+      </form>
+
+      <div class="table-box"></div>
+
+      <div class="counter-summary"></div>
+    </div>
+  </div>
+
+  <!-- importing jquery library -->
+  <script src="./js/jquery-1.11.2.min.js" ></script>
+
+  <!-- importing custom script file -->
+  <script src="./js/function.js" ></script> 
+</body>
+</html>
+
+
+
