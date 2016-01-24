@@ -1,0 +1,114 @@
+#filter-section{
+	@extend %clearfix; 
+	position: relative;
+
+	.filter-box{
+		background: url(../img/subnav_bg.jpg) repeat center;
+	}
+
+	.filter-tabs{
+		@extend %clearfix; 
+		padding: 20px 10px;
+		text-align: center;
+		width: 100%;
+
+		&__tab{
+			display: inline-block;
+			text-align: center;
+			border-bottom: 4px solid $bg-color--very-light-grey;
+			width: 17%;
+			margin-right: 15px;
+			@include font-size($text-size--small);
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		&__tab:hover{
+			border-bottom: 4px solid $anchor-color--light-green;
+		}
+
+		&__tab:last-child{
+			margin-right: 0px;
+		}
+
+		.selected{
+			border-bottom: 4px solid $bg-color--light-green;
+		}
+	}
+
+	.filter-button{
+		position: absolute;
+		top:12px;
+		right: 10px;
+		padding: 10px 0 15px 10px;
+		text-align: left;
+		cursor: pointer;
+
+		&__name{
+			 @include filter-component($text-size--small, "filter_icon", no-repeat, right 14px bottom 12px, 12px 40px 10px 15px, $bg-color-filters, $bg-color--white, 5px, 0);	
+		}
+	} 
+	
+	.filter-filters{
+
+		.filter-list{
+			padding: 15px 10px 25px 10px;
+
+			&__item{
+				@extend %clearfix;
+				display: inline-block;
+				margin-top: 10px;
+				cursor: pointer;
+				@include filter-component($text-size--small, "close_filter_icon", no-repeat, right 18px bottom 15px, 1px 25px 0px 20px, $bg-color-filters, $bg-color--white, 5px, 10px);
+
+				&:after{
+		            display: inline-block;
+		            content: "";
+		            background: url("../img/filter_separator.gif") no-repeat 0px 4px;
+		            padding-right: 10px;
+		            padding-left :10px;
+		            width: 1px;
+		            height: 35px;
+		            margin-left: 20px;
+	        	}
+ 
+	        	.name{
+	        		padding-top: 11px;
+	        		float: left;
+	        	}
+			}
+		}
+	}
+}
+
+@include deskop_tablets{
+
+	#filter-section{
+		
+		.filter-tabs{
+			text-align: left;
+		}
+	}
+}
+
+@include phone{
+
+	#filter-section{
+
+		.filter-box{
+
+			.filter-tabs{
+
+				&__tab{
+					display: block;
+					margin-bottom: 10px;
+					width: 130px;
+				}
+			}	
+		}	
+	}
+}
+
+
+
+

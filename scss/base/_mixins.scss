@@ -49,7 +49,6 @@
 	}	
 }
 
-
 //clearfix
 %clearfix {
   &:after {
@@ -59,14 +58,34 @@
   }
 }
 
-//Fallback when pixel isn't supported IE8 and below
+//filter component mixin
+@mixin filter-component($size, $img-name, $repeat, $position, $padding, $background-color, $font-color, $rounded-corners, $margin-right) {
+  @include font-size($size);
+  $url:"../img/#{$img-name}.gif";
+  background: url($url) $repeat; 
+  background-position: $position;
+  padding: $padding;
+  background-color: $background-color;
+  color: $font-color;
+  @include rounded-corners($rounded-corners);
+  margin-right: $margin-right;
+} 
+
+//text mixin
+@mixin text($size, $line, $family: $base-font-family) {
+    @include font-size($size); 
+    line-height: ($line/$size);
+    font-family: $family;
+}
+
+//font-size mixin - Fallback when pixel isn't supported in IE8 and below
 @function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
 }
 
 @mixin font-size($size) {
-  font-size: $size;
+  font-size: $size; //Fallback in px
   font-size: calculateRem($size);
 }
 

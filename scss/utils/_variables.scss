@@ -1,17 +1,38 @@
 //Colours variables
-$primary-color:#000000;
-$secondary-color:#ffffff;
-$third-color: #A4A4A4;
-$nav-footer-color:#000000;
-$anchor-hover-color:#89AF4A;
+$primary-color:#707070;
+$secondary-color:#a0a0a0;
+$anchor-color--light-green:#72cac8;
+$anchor-hover-color:#B0171F;
 $background-nav-color:#3a3a3a;
 $border-nav-color:#d3d3d3;
 $page-background-color:#ffffff;
 $nav-header-separator-color:#4c4c4c;
 $search-section-border-color:#9a9a9a;
-$background-copy-color:#525252;
-$error-message-color:#FF0000;
+$warning-message-color:#FF0000;
 $off-wht: rgba(white,.4);
+$black-colour: #000000;
+$bg-color--light-green:#72cac8;
+$bg-color--dark-grey:#525252;
+$bg-color--light-grey:#A4A4A4;
+$bg-color--very-light-grey:#D3D3D3;
+$bg-color--white:#ffffff;
+$bg-color-filters:#48182c;
+
+//base font variables
+$base-font-family: Helvetica, Verdana, sans-serif, Arial;
+$base-font-color--white:#ffffff;
+$base-font-size: 10px;
+$text-size--small: 15px;
+$text-size--medium: 24px;
+$text-size--large: 30px;
+$text-size--very-large: 36px;
+$text-size--extra-large: 40px;
+$base_line: 20px;
+$text_line--small: 20px;
+$text_line--medium: 30px;
+$text_line--large: 36px;
+$text_line--very-large: 40px;
+$text-color-base:#000000;
 
 //buttons colours
 $purple: #9A68C7;

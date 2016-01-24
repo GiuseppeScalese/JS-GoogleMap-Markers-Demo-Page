@@ -1,11 +1,70 @@
-#header{
-	
-	padding: 30px 0 30px 0;
+.header{
+	@extend %clearfix; 
+	margin-top: 30px;
 	text-align: center;
-	
-	.main-heading{
-		font-size: 30px;
-		color: $primary-color;
+
+	&__logo-link, &__user-info{
+		float: left;
+	} 
+
+	&__logo-link{
+		padding-left: 10px;
+	}
+
+	&__user-info{
+
+		text-align: right;
+		padding: 5px 10px 0 0;
+
+		.name{
+			@include font-size(20px);
+		}
+
+		.logout{
+			display: block;
+			@include font-size(18px);
+		}
+	}
+
+	&__user-details{ 
+		float: right;
+		padding:10px 10px 0;
+	}
+
+	&__headline{
+		clear: both;
+		@include font-size($text-size--extra-large);
+		background: $bg-color--light-green;
+		padding: 30px 10px;
+		border-top: 8px solid $black-colour;
+		margin-bottom: 0;
+	}
+}
+
+@include deskop_tablets{
+
+	.header{
+		
+		&__headline{
+			@include font-size($text-size--large);
+		}
+	}
+}
+
+@include phone{
+
+	.header{
+		margin-top: 15px;
+		
+		&__headline{
+			@include font-size($text-size--large);
+			padding: 20px 10px;
+		}
+
+		&__user-details{ 
+			float: right;
+			padding-bottom:10px;
+		}
 	}
 }
 

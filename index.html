@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paragraph Tab List App</title>
+<title>Map Of Employees App</title>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -21,24 +21,214 @@
 </head> 
 <body>
   <div id="wrapper">
-    <header id="header">
-      <h1 class="main-heading">Paragraph parser</h1>
+    
+    <header class="header">
+      <a class="header__logo-link" href="#" title="Go to the company homepage">
+        <img class="header__logo-img" src="./img/company_logo.jpg" alt="Company logo"/>
+      </a> 
+
+      <div class="header__user-details">
+        <div class="header__user-info">
+           <span class="name">Amanda Johnson</span>
+           <a class="logout" href="#" title="Leave Track your Employees Page">Logout</a>
+        </div>
+        <a class="header__user-img-link" href="#" title="User personal page">
+          <img class="header__user-img" src="./img/logged_user_img.png" alt="Logged in user"/>
+        </a> 
+        <a class="header__settings-link" href="#" title="Go to page settings">
+          <img class="header__settings-img-link" src="./img/settings_img.png" alt="Page settings"/>
+        </a> 
+      </div>
+
+      <h1 class="header__headline">TRACK YOUR EMPLOYEES</h1>
     </header>
 
-    <div id="main">
-      <div class="validation-message"></div>
-      
-      <form class="form" action="" method="post">
-        <label class="form__label" for="textarea-content">Insert the paragraph to be parsed:</label>
-        <textarea autocomplete="off" class="form__textarea" id="textarea-content" name="textarea-content" placeholder="Please enter a paragraph..."></textarea>
-        <input type="button" class="form__button btn--blue btn--medium" value="Submit">
-      </form>
+    <div id="filter-section">
+      <div class="filter-box">
+        <ul class="filter-tabs">
+          <li class="filter-tabs__tab selected">MAP</li>
+          <li class="filter-tabs__tab">LIST</li>
+          <li class="filter-tabs__tab">SEARCH</li>
+        </ul>
+        <div class="filter-button">
+          <span class="filter-button__name">ADD FILTER</span>
+        </div>
+      </div>
 
-      <div class="table-box"></div>
-
-      <div class="counter-summary"></div>
+      <div class="filter-filters">
+        <ul class="filter-list">
+          <li class="filter-list__item"><span class="name">SHORT</span></li>
+          <li class="filter-list__item"><span class="name">LONG NAME OF FILTER</span></li>
+          <li class="filter-list__item"><span class="name">FILTER NAME</span></li>
+        </ul>
+      </div>
     </div>
+
+    <div id="main">
+      <div class="view-box">
+        <div id="map-canvas">
+        </div>
+        <div class="view-employees-box">
+          <h2 class="view-employees-box__headline">Employees in <br/> <span class="location">LONDON</span></h2>
+          <ul class="view-employees">
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img1.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Thomas Rickmann</span>
+                <span class="employee-details__arr-date">Arrival date: <span>12 Jan 2014</span></span>
+              </div>   
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img2.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Gemma Falconn</span>
+                <span class="employee-details__arr-date">Arrival date: <span>28 Dec 2014</span></span>
+              </div>
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img3.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Daniel Kensworthy</span>
+                <span class="employee-details__arr-date">Arrival date: <span>13 Feb 2014</span></span>
+              </div> 
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img4.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Andre Vila Falcon</span>
+                <span class="employee-details__arr-date">Arrival date: <span>17 Feb 2014</span></span>
+              </div>  
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img5.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">George Smith</span>
+                <span class="employee-details__arr-date">Arrival date: <span>23 Sep 2013</span></span>
+              </div>   
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img6.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Amanda Hightower</span>
+                <span class="employee-details__arr-date">Arrival date: <span>27 Jul 2013</span></span>
+              </div>     
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img7.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Diana Bloomberg</span>
+                <span class="employee-details__arr-date">Arrival date: <span>12 Jan 2014</span></span>
+                <span class="employee-details__message">Visa expires in 90 days</span>
+              </div>  
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img1.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Magnus Heise</span>
+                <span class="employee-details__arr-date">Arrival date: <span>12 Jan 2014</span></span>
+              </div>  
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img5.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Thomas Rickmann</span>
+                <span class="employee-details__arr-date">Arrival date: <span>12 Jan 2014</span></span>
+              </div>   
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img2.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Gemma Falconn</span>
+                <span class="employee-details__arr-date">Arrival date: <span>28 Dec 2014</span></span>
+              </div>
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img3.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Daniel Kensworthy</span>
+                <span class="employee-details__arr-date">Arrival date: <span>13 Feb 2014</span></span>
+              </div> 
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img4.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">Andre Vila Falcon</span>
+                <span class="employee-details__arr-date">Arrival date: <span>17 Feb 2014</span></span>
+              </div>  
+            </li>
+            <li class="view-employees__employee">
+              <div class="employee-media">
+                <a class="employee-media__link" href="#" title="Go to employee's personal page">
+                  <img class="employee-media__img" src="./img/people_img5.jpg" alt="See employee's details"/>
+                </a>
+              </div>
+              <div class="employee-details">
+                <span class="employee-details__name">George Smith</span>
+                <span class="employee-details__arr-date">Arrival date: <span>23 Sep 2013</span></span>
+              </div>   
+            </li>
+           
+          </ul>
+          <div class="view-employees-link">
+            <a class="view-employees-link__all" href="#" title="View all employees available">
+              View all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      
   </div>
+
+  <!-- importing Google library -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKoUwfevO7ZSyuSvjSXJk2g965FgSJitA"></script>
 
   <!-- importing jquery library -->
   <script src="./js/jquery-1.11.2.min.js" ></script>

@@ -1,72 +1,102 @@
 #main{
-	margin: 0 auto; 
-	width: 65%;
-	padding: 30px 0;
+	padding: 0 0 20px;
+	@extend %clearfix;
+	margin-bottom: 30px;
 
-	.form{
-		&__textarea{
-			overflow: auto;
-			font-size: 14px;
+	.view-box{
+		height: 660px;
+		margin:10px;
+		
+		#map-canvas{
+			height: 100%;
+			margin: 0; 
+			padding: 0;
+			width: 70%;
+			float: left;
+			border:1px solid $bg-color--very-light-grey;
+
+			.employee-info{
+				@include font-size($text-size--small);
+			}
 		}
 
-		&__button{
-			@extend .btn;	
-		}
+		.view-employees-box{
+			width: 30%;
+			float: right;
+			padding: 10px 10px 0 10px;
+			border:1px solid $bg-color--very-light-grey;
+			border-left:0;
+			height: 100%;
 
-		&__label{
-			font-size: 18px;
-		} 
-	}
+			.view-employees{
+				max-height: auto;
+				min-height: 520px;
+				height: 520px;
+				overflow: hidden;
+				overflow-y:scroll;
+				background: url(../img/sidelist_bg.jpg) repeat center;
 
-	.validation-message{
-		padding-bottom: 20px;
-		font-size: 15px;
+				&__employee{				
+					@extend %clearfix; 
+					padding: 10px 0 5px;
+					margin: 0 8px;
+					border-bottom: 1px solid $bg-color--very-light-grey;
 
-		.error-message{
-			color:$error-message-color;
-		}
-	}
+					.employee-media{
+						width: 47px;
+						float: left;
+					}
 
-	.counter-summary{
-		padding: 30px 0;
+					.employee-details{
+						width: 77%;
+						overflow: hidden;
+						padding-left: 5px;
+						display: inline-block;
+						width: 78%;
 
-		span{
-			padding: 5px 0;
-			font-size: 14px;
-			display: block;
-		}
-	}
+						&__name{
+							font-weight: bold;
+							@include font-size(14px);
+							padding-bottom: 3px;
+						}
 
-	.table-box{
-		display: none;
-		margin-top:40px;
-		background-color: $secondary-color;
-		color: $primary-color; 
-		@extend %clearfix;
+						&__arr-date{ 
+							padding-bottom: 2px;
+						}
 
-		&__content{
-			display: inline-block;
-			vertical-align: top;
+						&__arr-date, &__name{
+							display: block;
+						}
 
-			thead{
-				tr{
-					font-size: 16px;
-					font-weight: bold;
-					text-align: left;
+						&__arr-date, &__message{
+							@include font-size(13px);
+						}
 
-					th{
-						text-transform: uppercase;
-						padding: 10px 20px 5px 0px;
+						&__message{
+							color:$warning-message-color;
+						}
 					}
 				}
 			}
 
-			tr{
-				td{
-					padding: 8px 20px 8px 0px;
-					color: $primary-color;
-					text-align: left;
-			    }
+			&__headline{
+				color: $primary-color;
+				text-align: center;
+				@include font-size(22px);
+				padding-top: 5px;
+
+				.location{
+					font-weight: bold;
+				}
+			}
+
+			.view-employees-link{
+				text-align: center;
+				padding: 20px 0;
+
+				&__all{
+					@include font-size(18px);
+				}
 			}
 		}
 	}
@@ -75,15 +105,83 @@
 @include deskop_tablets{
 
 	#main{
-		width: 80%;
+		
+		.view-box{
 
+			.view-employees-box{
+
+				&__headline{
+					@include font-size(17px);
+				}
+
+				.view-employees-link{
+					padding: 25px 0;
+				}
+
+				.view-employees{				
+
+					&__employee{
+
+						.employee-details{
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
 @include phone{
 
 	#main{
-		width: 90%;
+		margin-bottom: 15px;
+
+		.view-box{
+
+			#map-canvas{
+				width: 100%;
+			}
+
+			.view-employees-box{
+				width: 100%;
+				float: right;
+				padding-top: 40px;
+				border-left:1px solid $bg-color--very-light-grey;
+				border-top:0;
+				height: auto;
+
+				&__headline{		
+					@include font-size(24px);			
+				}
+
+				.view-employees-link{
+
+					&__all{
+						@include font-size(20px);
+					}	
+				}
+
+				.view-employees{
+
+					&__employee{
+
+						.employee-details{
+							width: 80%;
+							padding-left: 10px;
+
+							&__name{
+								@include font-size(18px);
+							}
+
+							&__arr-date{
+								@include font-size(16px);					
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
